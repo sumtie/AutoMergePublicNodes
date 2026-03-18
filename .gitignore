@@ -1,0 +1,7 @@
+__pycache__/
+local*
+_*
+!_config*
+.vscode/
+venv
+.idea
