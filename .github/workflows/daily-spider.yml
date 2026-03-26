@@ -1,0 +1,62 @@
+name: Daily Spider
+
+on:
+  schedule:
+    - cron: '0 2 * * *'        # Runs daily at 10:00 AM Beijing Time (UTC+8)
+  workflow_dispatch:           # Allows manual trigger for testing
+
+jobs:
+  spider-and-generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Delete workflows runs for current repo
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          retain_days: 0
+          keep_minimum_runs: 5
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 PyYAML lxml
+
+      - name: Run spider to fetch nodes and generate config
+        run: |
+          python spider.py
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --quiet HEAD -- meta.yaml v2.txt || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Configure Git
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and push updates
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git add meta.yaml v2.txt
+          git commit -m "Daily update: $(date '+%Y-%m-%d %H:%M:%S')"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Job summary
+        run: |
+          echo "=== Job Completed ==="
+          if [ "${{ steps.git-check.outputs.changed }}" = "true" ]; then
+            echo "✅ New nodes detected. Changes committed and pushed."
+          else
+            echo "ℹ️ No changes today. No commit needed."
+          fi
