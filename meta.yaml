@@ -3,16 +3,13 @@ socks-port: 7891
 mode: rule
 log-level: info
 proxies:
-- name: 亚太地区_V2CROSS.COM
-  type: vmess
-  server: 103.181.164.145
-  port: 51556
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 0
-  cipher: auto
-  tls: false
+- name: 英国+伦敦Virgin+Media
+  type: trojan
+  server: 82.26.155.3
+  port: 10369
+  password: n5ix4FcMQYENMQPL+YKbvyJ8nZ84+bNTsj
   skip-cert-verify: true
-  servername: ''
+  sni: fra34.chasem2026sud.com
   network: tcp
 - name: 英国_V2CROSS.COM
   type: vmess
@@ -23,26 +20,7 @@ proxies:
   cipher: auto
   tls: false
   skip-cert-verify: true
-  servername: ''
-  network: tcp
-- name: 英国+伦敦Virgin+Media
-  type: trojan
-  server: 82.26.155.199
-  port: 10369
-  password: n5ix4FcMQYENMQPL+YKbvyJ8nZ84+bNTsj
-  skip-cert-verify: true
-  sni: fra4.chasem2026sud.com
-  network: tcp
-- name: 伊朗_V2CROSS.COM
-  type: vmess
-  server: v12.hdacd.com
-  port: 30812
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  servername: ''
+  servername: 82.198.246.97
   network: tcp
 - name: 191babc5-VLESS_WS
   type: vless
@@ -74,64 +52,15 @@ proxies:
     path: /dyajws
     headers:
       Host: lax2.ibgfw.top
-- name: 🇺🇸_US_美国
-  type: vless
-  server: 135.84.74.155
-  port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.111000.v6.navy
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /?Telegram🇨🇳 @WangCai2=
-    headers:
-      Host: sni.111000.v6.navy
-- name: 🇷🇺_RU_俄罗斯->🇸🇮_SI_斯洛文尼亚
-  type: vless
-  server: 5.182.5.239
-  port: 443
-  uuid: c4f2dee2-14e3-4c02-91e9-31c7917e239c
-  tls: true
-  servername: sub.sbrf-cdn342.ru
-  flow: xtls-rprx-vision
+- name: 🇷🇺_RU_俄罗斯
+  type: trojan
+  server: 31.192.233.38
+  port: 8443
+  password: nodes-d2ac438d
+  skip-cert-verify: true
+  sni: node-hk-1.v2sv.top
   network: tcp
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-- name: 🇺🇸_US_美国_2
-  type: vless
-  server: 198.41.223.212
-  port: 443
-  uuid: 15235ce9-4cd2-4483-b6b6-7fc4a3f44735
-  tls: true
-  servername: snip.ere.de5.net
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: snip.ere.de5.net
-- name: 🇺🇸_US_美国_3
-  type: vless
-  server: zrf.cf.090227.xyz
-  port: 443
-  uuid: 15235ce9-4cd2-4483-b6b6-7fc4a3f44735
-  tls: true
-  servername: snip.ere.de5.net
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: snip.ere.de5.net
-- name: 🇺🇸_US_美国_4
+- name: 🇺🇸_US_美国
   type: vless
   server: 162.159.152.4
   port: 443
@@ -146,17 +75,9 @@ proxies:
     path: /?ed=2560
     headers:
       Host: l.ayovo.netlib.re
-- name: 🇺🇸_US_美国_5
-  type: trojan
-  server: 216.24.57.250
-  port: 443
-  password: 5027e2a4-c4d2-463a-9508-83a2c7d1ad83
-  skip-cert-verify: true
-  sni: afrcloud1.mmv.kr
-  network: ws
-- name: 🇺🇸_US_美国_6
+- name: 🇺🇸_US_美国_2
   type: vless
-  server: 162.159.252.202
+  server: 162.159.153.13
   port: 443
   uuid: 15235ce9-4cd2-4483-b6b6-7fc4a3f44735
   tls: true
@@ -169,29 +90,46 @@ proxies:
     path: /?ed=2560
     headers:
       Host: snip.ere.de5.net
-- name: 🇺🇸US-64.186.254.102-0225
+- name: 🇺🇸US-104.238.162.6-0240
   type: trojan
-  server: n2.chateditimage.com
-  port: 443
-  password: de7d6444-a7a8-4b3a-bf26-bc6939bb0279
+  server: 104.238.162.6
+  port: 13109
+  password: WwipNOSqUh49CEapMmIrv6m6AZLf-EC0%2525252BT
   skip-cert-verify: true
-  sni: n2.chateditimage.com
+  sni: ord2.edge-command.click
   network: tcp
-- name: 🏁RELAY-104.18.43.174-0407
-  type: vmess
-  server: cf.090227.xyz
-  port: 443
-  uuid: 290cc691-3ac6-4387-98a1-25c8eb8ca2ea
-  alterId: 0
-  cipher: auto
-  tls: true
+- name: 🇳🇴NO-80.173.231.254-0277
+  type: trojan
+  server: 80.173.231.254
+  port: 12420
+  password: wp9IsiY82uQhcmgNC1eoBM
   skip-cert-verify: true
-  servername: sgal.dagrate.eu.org
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: sgal.dagrate.eu.org
+  sni: www.semanticstaplegun.click
+  network: tcp
+- name: 🇬🇧GB-82.26.155.199-0285
+  type: trojan
+  server: 82.26.155.199
+  port: 10369
+  password: n5ix4FcMQYENMQPL%2525252BYKbvyJ8nZ84%2525252BbNTsj
+  skip-cert-verify: true
+  sni: fra4.chasem2026sud.com
+  network: tcp
+- name: 🇬🇧GB-82.26.155.20-0287
+  type: trojan
+  server: 82.26.155.20
+  port: 10369
+  password: n5ix4FcMQYENMQPL%2525252BYKbvyJ8nZ84%2525252BbNTsj
+  skip-cert-verify: true
+  sni: fra35.chasem2026sud.com
+  network: tcp
+- name: 🇬🇧GB-82.26.155.3-0289
+  type: trojan
+  server: 82.26.155.3
+  port: 10369
+  password: n5ix4FcMQYENMQPL%2525252BYKbvyJ8nZ84%2525252BbNTsj
+  skip-cert-verify: true
+  sni: fra34.chasem2026sud.com
+  network: tcp
 - name: 🇯🇵_VMESS-美国>日本-NF解锁日本地区非自制剧-ChatGPT-YouTube-t1.620720.xyz:84
   type: vmess
   server: t1.620720.xyz
@@ -222,36 +160,21 @@ proxies:
     path: /api/v1/graphql
     headers:
       Host: cg1c07.waimaojd.com
-- name: 🇺🇸_VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-cg1c01.waimaojd.c
+- name: 🇦🇺_VMESS-未知>澳大利亚-NF解锁澳大利亚自制剧-ChatGPT-TikTok-YouTube-sy4.6207
   type: vmess
-  server: cg1c01.waimaojd.com
+  server: sy4.620720.xyz
   port: 443
-  uuid: be8e3136-b874-4085-bd23-ec3699300490
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
   alterId: 0
   cipher: auto
   tls: true
   skip-cert-verify: true
-  servername: cg1c01.waimaojd.com
+  servername: sy4.620720.xyz
   network: ws
   ws-opts:
-    path: /api/v1/graphql
+    path: /
     headers:
-      Host: cg1c01.waimaojd.com
-- name: 🇺🇸_VMESS-美国-ChatGPT-TikTok-YouTube-cg1c04.waimaojd.com:443
-  type: vmess
-  server: cg1c04.waimaojd.com
-  port: 443
-  uuid: be8e3136-b874-4085-bd23-ec3699300490
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  servername: cg1c04.waimaojd.com
-  network: ws
-  ws-opts:
-    path: /api/v1/graphql
-    headers:
-      Host: cg1c04.waimaojd.com
+      Host: sy4.620720.xyz
 - name: 🇺🇸_VMESS-美国-ChatGPT-TikTok-YouTube-cg1c14.waimaojd.com:443
   type: vmess
   server: cg1c14.waimaojd.com
@@ -267,7 +190,42 @@ proxies:
     path: /api/v1/graphql
     headers:
       Host: cg1c14.waimaojd.com
+- name: 🇬🇧_英国_伦敦Virgin_Media
+  type: trojan
+  server: 82.26.155.105
+  port: 10369
+  password: n5ix4FcMQYENMQPL%2525252BYKbvyJ8nZ84%2525252BbNTsj
+  skip-cert-verify: true
+  sni: fra32.chasem2026sud.com
+  network: tcp
 - name: 🇬🇧_英国_V2CROSS.COM
+  type: vmess
+  server: 82.198.246.250
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  servername: ''
+  network: tcp
+- name: 🇪🇸_西班牙_V2CROSS.COM
+  type: trojan
+  server: 80.173.230.196
+  port: 26279
+  password: a5inYFE%253DJGV89%252BhjxIqgDp1tcWBd6
+  skip-cert-verify: true
+  sni: 80.173.230.196
+  network: tcp
+- name: 🇧🇬_保加利亚_V2CROSS.COM
+  type: trojan
+  server: 78.159.131.12
+  port: 28259
+  password: MeaDiUmPlkWbZJ2BON8tz
+  skip-cert-verify: true
+  sni: ads.x5.ru
+  network: tcp
+- name: 🇬🇧_英国_V2CROSS.COM_2
   type: vmess
   server: 82.198.246.97
   port: 180
@@ -276,37 +234,7 @@ proxies:
   cipher: auto
   tls: false
   skip-cert-verify: true
-  servername: 2001:bc8:32d7:302::10
-  network: tcp
-- name: 🇺🇸_美国_Choopa公司数据中心
-  type: trojan
-  server: 104.238.162.6
-  port: 13109
-  password: WwipNOSqUh49CEapMmIrv6m6AZLf-EC0%2525252BT
-  skip-cert-verify: true
-  sni: ord2.edge-command.click
-  network: tcp
-- name: 🇮🇷_伊朗_V2CROSS.COM
-  type: vmess
-  server: v12.hdacd.com
-  port: 30812
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  servername: 4120-BE04-13ef56096989.457.PP.ua
-  network: tcp
-- name: 🇭🇰_香港@ripaojiedian
-  type: vmess
-  server: v10.hdacd.com
-  port: 30807
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  servername: v10.hdacd.com
+  servername: ''
   network: tcp
 - name: 🇺🇸_US美国(mibei77.com_米贝节点分享)
   type: trojan
@@ -317,23 +245,36 @@ proxies:
   sni: jflsjlaf.pages.dev
   network: tcp
 - name: 🇺🇸_US美国(mibei77.com_米贝节点分享)_2
-  type: vmess
-  server: v36.hdacd.com
-  port: 30836
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  servername: v36.hdacd.com
-  network: tcp
-- name: 🇪🇸_西班牙(mibei77.com_米贝节点分享)
   type: trojan
-  server: 109.234.211.66
-  port: 2087
+  server: 152.53.200.167
+  port: 8444
   password: trojan
   skip-cert-verify: true
-  sni: store.timimi.dpdns.org
+  sni: jflsjlaf.pages.dev
+  network: tcp
+- name: 🇺🇸_US美国(mibei77.com_米贝节点分享)_3
+  type: trojan
+  server: 152.53.45.251
+  port: 8888
+  password: trojan
+  skip-cert-verify: true
+  sni: jflsjlaf.pages.dev
+  network: tcp
+- name: 🇺🇸_US美国(mibei77.com_米贝节点分享)_4
+  type: trojan
+  server: 152.53.60.198
+  port: 8444
+  password: trojan
+  skip-cert-verify: true
+  sni: jflsjlaf.pages.dev
+  network: tcp
+- name: 🇺🇸_US美国(mibei77.com_米贝节点分享)_5
+  type: trojan
+  server: blackshadow.dpdns.org
+  port: 443
+  password: 2bcfbfba-b446-4ad5-93ad-72af9e008f61
+  skip-cert-verify: true
+  sni: blackshadow.dpdns.org
   network: tcp
 - name: 🇷🇺_RU俄罗斯(mibei77.com_米贝节点分享)
   type: trojan
@@ -343,198 +284,13 @@ proxies:
   skip-cert-verify: true
   sni: store.timimi.dpdns.org
   network: tcp
-- name: 🇺🇸_US美国(mibei77.com_米贝节点分享)_3
-  type: vmess
-  server: v9.hdacd.com
-  port: 30809
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  servername: v9.hdacd.com
-  network: tcp
-- name: 🇺🇸_US美国(mibei77.com_米贝节点分享)_4
-  type: vmess
-  server: v8.hdacd.com
-  port: 30808
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  servername: v8.hdacd.com
-  network: tcp
-- name: 🇺🇸_US美国(mibei77.com_米贝节点分享)_5
-  type: vmess
-  server: v24.hdacd.com
-  port: 30824
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  servername: v24.hdacd.com
-  network: tcp
 - name: youneed.win
   type: vless
-  server: 45.149.12.191
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  server: 185.94.29.156
+  port: 4001
+  uuid: 00000000-0000-4000-8000-000000000000
   tls: true
-  servername: sni.my111000.tech
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: Telegram🇨🇳@WangCai2/?ed=2560
-    headers:
-      Host: sni.my111000.tech
-- name: youneed.win_2
-  type: vless
-  server: 188.114.98.0
-  port: 443
-  uuid: 53f0bca8-f170-4ef7-8031-c7d441189dbf
-  tls: true
-  servername: 639075478000711639.civic-perma.info
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /cahttingws
-    headers:
-      Host: 639075478000711639.civic-perma.info
-- name: youneed.win_3
-  type: vless
-  server: 162.159.36.5
-  port: 443
-  uuid: fc965ad9-bdd7-4815-ad71-b39ec5972dc1
-  tls: true
-  servername: octopusss4.com
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /tsghdws
-    headers:
-      Host: octopusss4.com
-- name: youneed.win_4
-  type: vless
-  server: ovhwuxian.pai50288.uk
-  port: 8443
-  uuid: 57ba2ab1-a283-42eb-82ee-dc3561a805b8
-  tls: true
-  servername: ovhwuxian.pai50288.uk
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /57ba2ab1
-    headers:
-      Host: ovhwuxian.pai50288.uk
-- name: youneed.win_5
-  type: vless
-  server: 46.32.184.75
-  port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.111000.indevs.in
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /?ed=2560&Telegram🇨🇳@@jdfxq
-    headers:
-      Host: sni.111000.indevs.in
-- name: youneed.win_6
-  type: vless
-  server: 104.26.1.221
-  port: 443
-  uuid: 3f9c8463-8610-3ed8-86c8-a26713067825
-  tls: true
-  servername: dabaius2.sylu.net
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /db10240eb751d6ab
-    headers:
-      Host: dabaius2.sylu.net
-- name: youneed.win_7
-  type: vless
-  server: 172.64.146.68
-  port: 443
-  uuid: fc965ad9-bdd7-4815-ad71-b39ec5972dc1
-  tls: true
-  servername: octopusss4.com
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /tsghdws
-    headers:
-      Host: octopusss4.com
-- name: youneed.win_8
-  type: vless
-  server: 162.159.36.20
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.jpmj.dev
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /?Telegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2=
-    headers:
-      Host: sni.jpmj.dev
-- name: youneed.win_9
-  type: vless
-  server: 192.0.54.238
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.jpmj.dev
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /?ed=2560&telegram🇨🇳+@wangcai2
-    headers:
-      Host: sni.jpmj.dev
-- name: youneed.win_10
-  type: vless
-  server: www.gov.se
-  port: 2053
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  tls: true
-  servername: c674xj5uu.chinam.indevs.in
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: c674xj5uu.chinam.indevs.in
-- name: youneed.win_11
-  type: vless
-  server: 147.78.140.238
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.jpmj.dev
+  servername: sub.mot.ip-ddns.com
   network: ws
   udp: true
   packet-encoding: xudp
@@ -542,26 +298,416 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: sni.jpmj.dev
-- name: youneed.win_12
+      Host: sub.mot.ip-ddns.com
+- name: youneed.win_2
   type: vless
-  server: 172.67.134.216
-  port: 443
-  uuid: 5d950f22-a120-42c3-86f8-8ee81bfa08c9
+  server: 37.114.50.157
+  port: 4002
+  uuid: 00000000-0000-4000-8000-000000000000
   tls: true
-  servername: VPN.NNET.Online
+  servername: sub.mot.ip-ddns.com
   network: ws
   udp: true
   packet-encoding: xudp
   skip-cert-verify: false
   ws-opts:
-    path: /vless-tls
+    path: /
     headers:
-      Host: nnet.online
+      Host: sub.mot.ip-ddns.com
+- name: youneed.win_3
+  type: vless
+  server: 222.167.202.10
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.10:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_4
+  type: vless
+  server: 222.167.202.14
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.14:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_5
+  type: vless
+  server: 222.167.202.15
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.15:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_6
+  type: vless
+  server: 222.167.202.16
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.16:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_7
+  type: vless
+  server: 222.167.202.2
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.2:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_8
+  type: vless
+  server: 222.167.202.21
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.21:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_9
+  type: vless
+  server: 222.167.202.22
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.22:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_10
+  type: vless
+  server: 222.167.202.23
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.23:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_11
+  type: vless
+  server: 222.167.202.26
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.26:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_12
+  type: vless
+  server: 222.167.202.3
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.3:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
 - name: youneed.win_13
   type: vless
-  server: 89.116.250.138
-  port: 2096
+  server: 222.167.202.32
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.32:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_14
+  type: vless
+  server: 222.167.202.33
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.33:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_15
+  type: vless
+  server: 222.167.202.35
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.35:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_16
+  type: vless
+  server: 222.167.202.4
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.4:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_17
+  type: vless
+  server: 222.167.202.45
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.45:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_18
+  type: vless
+  server: 222.167.202.47
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.47:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_19
+  type: vless
+  server: 222.167.202.52
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.52:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_20
+  type: vless
+  server: 222.167.202.6
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.6:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_21
+  type: vless
+  server: 222.167.202.60
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.60:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_22
+  type: vless
+  server: 222.167.202.70
+  port: 7443
+  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+  tls: true
+  servername: 2026.hhhhh.eu.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /222.167.202.70:7443
+    headers:
+      Host: 2026.hhhhh.eu.org
+- name: youneed.win_23
+  type: vless
+  server: 104.21.31.4
+  port: 8880
+  uuid: 0a5ab719-2407-4398-b507-8437ef365023
+  tls: false
+  servername: 104.21.31.4
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /FCHANNEL---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY
+    headers:
+      Host: underthegun.cfd.
+- name: youneed.win_24
+  type: vless
+  server: 162.159.60.59
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.danfeng.com.cfd
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.danfeng.com.cfd
+- name: youneed.win_25
+  type: vless
+  server: 43.167.157.65
+  port: 12345
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.fgfw.loc.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.fgfw.loc.cc
+- name: youneed.win_26
+  type: vless
+  server: 193.238.152.60
+  port: 443
+  uuid: 43488128-319e-f480-64ea-0acdc712e2a8
+  tls: true
+  servername: www.github.com
+  flow: xtls-rprx-vision
+  network: tcp
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  reality-opts:
+    public-key: ''
+    short-id: ''
+- name: youneed.win_27
+  type: vless
+  server: 150.251.145.242
+  port: 8443
+  uuid: 4b056394-2f40-11f1-bffe-46c4782ac1a7
+  tls: true
+  servername: www.apple.com
+  flow: xtls-rprx-vision
+  network: tcp
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  reality-opts:
+    public-key: ''
+    short-id: ''
+- name: youneed.win_28
+  type: vless
+  server: 104.17.150.99
+  port: 443
+  uuid: 5aa7d17e-7dc2-46dd-9acf-c3c97440259b
+  tls: true
+  servername: sss.yaml7.ggff.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      Host: sss.yaml7.ggff.net
+- name: youneed.win_29
+  type: vless
+  server: 176.222.54.157
+  port: 8443
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   tls: true
   servername: sni.111000.indevs.in
@@ -570,42 +716,12 @@ proxies:
   packet-encoding: xudp
   skip-cert-verify: false
   ws-opts:
-    path: /?ed=2560&Telegram🇨🇳 @WangCai2
+    path: /?Telegram%F0%9F%87%A8%F0%9F%87%B3+%40WangCai2=
     headers:
       Host: sni.111000.indevs.in
-- name: youneed.win_14
+- name: youneed.win_30
   type: vless
-  server: 104.19.73.126
-  port: 2053
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  tls: true
-  servername: qeccnw7svyo.chinav.eu.org
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: qeccnw7svyo.chinav.eu.org
-- name: youneed.win_15
-  type: vless
-  server: 80.93.202.238
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.jpmj.dev
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /?ed=2560&Telegram🇨🇳 @WangCai2
-    headers:
-      Host: sni.jpmj.dev
-- name: youneed.win_16
-  type: vless
-  server: 188.241.241.29
+  server: 188.130.207.158
   port: 2053
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   tls: true
@@ -615,16 +731,31 @@ proxies:
   packet-encoding: xudp
   skip-cert-verify: false
   ws-opts:
-    path: /?ed=2560&Telegram🇨🇳+@WangCai2
+    path: /?ed=2560security=tls
     headers:
       Host: sni.111000.v6.navy
-- name: youneed.win_17
+- name: youneed.win_31
   type: vless
-  server: 45.12.30.138
-  port: 2096
+  server: 188.130.207.92
+  port: 8443
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   tls: true
-  servername: sni.111000.indevs.in
+  servername: sni.111000.v6.navy
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: sni.111000.v6.navy
+- name: youneed.win_32
+  type: vless
+  server: 199.107.164.217
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.dynv6.net
   network: ws
   udp: true
   packet-encoding: xudp
@@ -632,11 +763,11 @@ proxies:
   ws-opts:
     path: /?ed=2560&Telegram🇨🇳@WangCai2
     headers:
-      Host: sni.111000.indevs.in
-- name: youneed.win_18
+      Host: sni.111000.dynv6.net
+- name: youneed.win_33
   type: vless
-  server: 82.117.245.58
-  port: 2053
+  server: 209.102.207.120
+  port: 443
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   tls: true
   servername: sni.111000.v6.navy
@@ -648,54 +779,46 @@ proxies:
     path: /
     headers:
       Host: sni.111000.v6.navy
-- name: youneed.win_19
+- name: VLESS
   type: vless
-  server: 89.58.32.115
-  port: 12001
+  server: 31.128.32.98
+  port: 443
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   tls: true
-  servername: sni.111000.v6.navy
-  network: ws
+  servername: 31.128.32.98
+  network: tcp
   udp: true
   packet-encoding: xudp
   skip-cert-verify: false
-  ws-opts:
-    path: /?ed=2560&telegram🇨🇳+@wangcai2
-    headers:
-      Host: sni.111000.v6.navy
-- name: youneed.win_20
+- name: VLESS_2
   type: vless
-  server: s1.db-link.in
+  server: 37.128.207.194
   port: 443
-  uuid: d2efa18a-9e8a-3057-91fe-90c8e620e49f
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   tls: true
-  servername: s6.oboob.cn
-  network: ws
+  servername: 37.128.207.194
+  network: tcp
   udp: true
   packet-encoding: xudp
   skip-cert-verify: false
-  ws-opts:
-    path: /db10242a4797a252
-    headers:
-      Host: s6.oboob.cn
-- name: youneed.win_21
+- name: youneed.win_34
   type: vless
-  server: 104.26.8.179
+  server: 87.120.92.150
   port: 8443
-  uuid: 57ba2ab1-a283-42eb-82ee-dc3561a805b8
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   tls: true
-  servername: ovhwuxian.pai50288.uk
+  servername: sni.111000.indevs.in
   network: ws
   udp: true
   packet-encoding: xudp
   skip-cert-verify: false
   ws-opts:
-    path: /57ba2ab1
+    path: /
     headers:
-      Host: ovhwuxian.pai50288.uk
-- name: youneed.win_22
+      Host: sni.111000.indevs.in
+- name: youneed.win_35
   type: vless
-  server: 94.183.186.27
+  server: 94.131.101.135
   port: 443
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   tls: true
@@ -705,10 +828,745 @@ proxies:
   packet-encoding: xudp
   skip-cert-verify: false
   ws-opts:
-    path: /?ed=2560&telegram🇨🇳@wangcai2
+    path: /
     headers:
       Host: sni.111000.v6.navy
-- name: youneed.win_23
+- name: youneed.win_36
+  type: vless
+  server: bestcf.030101.xyz
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.dynv6.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&proxyip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.dynv6.net
+- name: youneed.win_37
+  type: vless
+  server: 104.17.46.112
+  port: 443
+  uuid: 69d38faa-21a1-4d18-82cb-796a942c181b
+  tls: true
+  servername: sfsl.ardomains1.dpdns.org
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: sfsl.ardomains1.dpdns.org
+- name: youneed.win_38
+  type: vless
+  server: 104.18.33.131
+  port: 2096
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_39
+  type: vless
+  server: 104.18.33.27
+  port: 443
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_40
+  type: vless
+  server: 104.18.34.60
+  port: 2083
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_41
+  type: vless
+  server: 104.18.36.79
+  port: 2087
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_42
+  type: vless
+  server: 104.18.42.201
+  port: 8443
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_43
+  type: vless
+  server: 104.18.45.103
+  port: 2087
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_44
+  type: vless
+  server: 104.18.45.50
+  port: 443
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_45
+  type: vless
+  server: 104.19.33.3
+  port: 2083
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_46
+  type: vless
+  server: 104.19.36.80
+  port: 2087
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_47
+  type: vless
+  server: 104.19.40.68
+  port: 8443
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_48
+  type: vless
+  server: 104.19.44.23
+  port: 2053
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_49
+  type: vless
+  server: 104.19.45.13
+  port: 443
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_50
+  type: vless
+  server: 104.19.49.113
+  port: 2083
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_51
+  type: vless
+  server: 104.19.60.19
+  port: 2096
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_52
+  type: vless
+  server: 104.19.62.178
+  port: 2087
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_53
+  type: vless
+  server: 104.26.0.196
+  port: 2096
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_54
+  type: vless
+  server: 104.26.1.186
+  port: 2096
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_55
+  type: vless
+  server: 162.159.152.151
+  port: 2096
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_56
+  type: vless
+  server: 162.159.152.175
+  port: 2053
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_57
+  type: vless
+  server: 162.159.152.192
+  port: 443
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_58
+  type: vless
+  server: 162.159.152.210
+  port: 2096
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_59
+  type: vless
+  server: 162.159.153.157
+  port: 8443
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_60
+  type: vless
+  server: 162.159.153.4
+  port: 2096
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_61
+  type: vless
+  server: 162.159.153.40
+  port: 443
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_62
+  type: vless
+  server: 162.159.33.151
+  port: 2087
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_63
+  type: vless
+  server: 162.159.45.234
+  port: 2096
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_64
+  type: vless
+  server: 172.64.144.107
+  port: 2083
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_65
+  type: vless
+  server: 172.64.144.202
+  port: 2087
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_66
+  type: vless
+  server: 172.64.145.249
+  port: 2083
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_67
+  type: vless
+  server: 172.64.145.250
+  port: 443
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_68
+  type: vless
+  server: 172.64.147.159
+  port: 2087
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_69
+  type: vless
+  server: 172.64.147.230
+  port: 443
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_70
+  type: vless
+  server: 172.67.72.233
+  port: 2087
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_71
+  type: vless
+  server: 173.245.59.174
+  port: 2053
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_72
+  type: vless
+  server: 8.35.211.133
+  port: 443
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_73
+  type: vless
+  server: 8.35.211.172
+  port: 2096
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_74
+  type: vless
+  server: 8.35.211.177
+  port: 8443
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_75
+  type: vless
+  server: 8.35.211.18
+  port: 2087
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_76
+  type: vless
+  server: 8.35.211.181
+  port: 2096
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_77
+  type: vless
+  server: 8.35.211.220
+  port: 443
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_78
+  type: vless
+  server: 8.35.211.32
+  port: 8443
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_79
+  type: vless
+  server: 8.35.211.62
+  port: 2083
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_80
+  type: vless
+  server: 8.39.125.100
+  port: 443
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_81
+  type: vless
+  server: 8.39.125.130
+  port: 2087
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_82
+  type: vless
+  server: 8.39.125.193
+  port: 8443
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_83
+  type: vless
+  server: 8.39.125.57
+  port: 443
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_84
+  type: vless
+  server: 8.39.125.79
+  port: 2087
+  uuid: 8a30cf48-9fa2-46c5-8815-2822b12852e0
+  tls: true
+  servername: xqkxw.ccwu.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: xqkxw.ccwu.cc
+- name: youneed.win_85
   type: vless
   server: 172.66.44.211
   port: 443
@@ -723,48 +1581,584 @@ proxies:
     path: /tixvuws
     headers:
       Host: vangoghhh.info
-- name: VLESS
+- name: youneed.win_86
   type: vless
-  server: 135.125.123.246
-  port: 5432
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: 135.125.123.246
+  server: 77.110.122.205
+  port: 26946
+  uuid: 99f06929-4311-489c-91cc-ef1c582e5dfa
+  tls: false
+  servername: 77.110.122.205
   network: tcp
   udp: true
   packet-encoding: xudp
   skip-cert-verify: false
-- name: youneed.win_24
+- name: youneed.win_87
   type: vless
-  server: cfyx.dnspod.20237737.xyz
+  server: 185.93.105.113
   port: 443
-  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
+  uuid: c4f2dee2-14e3-4c02-91e9-31c7917e239c
   tls: true
-  servername: wy.ssdxz.cn
+  servername: sub.sbrf-cdn342.ru
+  flow: xtls-rprx-vision
+  network: tcp
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+- name: youneed.win_88
+  type: vless
+  server: 172.67.220.204
+  port: 443
+  uuid: cbb2d3b3-9164-46cc-84f9-82722fbf1353
+  tls: true
+  servername: 0n0W5JrE3RO-P4VmK-DILF-3HCr9U9fC.taLUmY147.WOrKErS.deV
   network: ws
   udp: true
   packet-encoding: xudp
   skip-cert-verify: false
   ws-opts:
-    path: /proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
+    path: /eyJqdW5rIjoiVXhYd0VacUYxaUEzIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOltdfQ==
     headers:
-      Host: wy.ssdxz.cn
-- name: youneed.win_25
+      Host: 0n0w5jre3ro-p4vmk-dilf-3hcr9u9fc.talumy147.workers.dev
+- name: youneed.win_89
   type: vless
-  server: mfa.gov.ua
+  server: cloudflare-ip.mofashi.ltd
   port: 443
-  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
+  uuid: ce069292-c8bf-40dd-a6b1-87818a1e64e9
   tls: true
-  servername: wt.ssdxz.cn
+  servername: 1-5js.pages.dev
   network: ws
   udp: true
   packet-encoding: xudp
   skip-cert-verify: false
   ws-opts:
-    path: /proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
+    path: /
     headers:
-      Host: wt.ssdxz.cn
-- name: youneed.win_26
+      Host: 1-5js.pages.dev
+- name: youneed.win_90
+  type: vless
+  server: 188.114.98.0
+  port: 2082
+  uuid: f0ff4425-8c26-4d81-8662-f34593060c8d
+  tls: false
+  servername: 188.114.98.0
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: DOFF.mehrsazi.ir
+- name: youneed.win_91
+  type: vless
+  server: 188.114.98.0
+  port: 443
+  uuid: fc965ad9-bdd7-4815-ad71-b39ec5972dc1
+  tls: true
+  servername: octopusss4.com
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /tsghdws
+    headers:
+      Host: octopusss4.com
+- name: youneed.win_92
+  type: vless
+  server: 176.97.73.155
+  port: 443
+  uuid: 264e5740-6a9b-4280-bf72-872dbc8f9194
+  tls: true
+  servername: navi.bankrate.com
+  network: tcp
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  reality-opts:
+    public-key: ''
+    short-id: ''
+- name: youneed.win_93
+  type: vless
+  server: 188.241.241.29
+  port: 2053
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.v6.navy
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?Telegram🇨🇳 @WangCai2=
+    headers:
+      Host: sni.111000.v6.navy
+- name: youneed.win_94
+  type: vless
+  server: 134.209.246.179
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.v6.navy
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&telegram🇨🇳 @wangcai2
+    headers:
+      Host: sni.111000.v6.navy
+- name: youneed.win_95
+  type: vless
+  server: 77.221.152.21
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.v6.navy
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sni.111000.v6.navy
+- name: youneed.win_96
+  type: vless
+  server: 160.153.1.122
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.v6.navy
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳 @WangCai2
+    headers:
+      Host: sni.111000.v6.navy
+- name: youneed.win_97
+  type: vless
+  server: fr01.grani.site
+  port: 443
+  uuid: 81d82277-c095-4613-ba51-cafd0e413e69
+  tls: true
+  servername: spliceflowtech.com
+  flow: xtls-rprx-vision
+  network: tcp
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  reality-opts:
+    public-key: ''
+    short-id: ''
+- name: youneed.win_98
+  type: vless
+  server: 95.164.85.33
+  port: 443
+  uuid: 43488128-319e-f480-64ea-0acdc712e2a8
+  tls: true
+  servername: www.rakuten.co.jp
+  flow: xtls-rprx-vision
+  network: tcp
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  reality-opts:
+    public-key: ''
+    short-id: ''
+- name: youneed.win_99
+  type: vless
+  server: 172.67.192.0
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: nameless-heart-02e4.ariya-696.workers.dev
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /sni.111000.dynv6.net/
+    headers:
+      Host: nameless-heart-02e4.ariya-696.workers.dev
+- name: youneed.win_100
+  type: vless
+  server: www.digitalcommerce360.com
+  port: 2053
+  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
+  tls: true
+  servername: qyi.fqjd663.ggff.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: qyi.fqjd663.ggff.net
+- name: youneed.win_101
+  type: vless
+  server: www.ftc.net
+  port: 2053
+  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
+  tls: true
+  servername: qyi.fqjd663.ggff.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: qyi.fqjd663.ggff.net
+- name: youneed.win_102
+  type: vless
+  server: 31.56.28.154
+  port: 8443
+  uuid: f3a1017d-1ebf-11f1-8cae-c3845d39d2de
+  tls: true
+  servername: www.apple.com
+  flow: xtls-rprx-vision
+  network: tcp
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  reality-opts:
+    public-key: ''
+    short-id: ''
+- name: youneed.win_103
+  type: vless
+  server: video.livecuts.cc
+  port: 443
+  uuid: 443d07a7-205c-4191-9a25-86494e1b18fe
+  tls: true
+  servername: video.livecuts.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /video
+    headers:
+      Host: video.livecuts.cc
+- name: youneed.win_104
+  type: vless
+  server: 104.18.32.47
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_105
+  type: vless
+  server: 104.18.32.47
+  port: 8443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.dynv6.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?Telegram🇨🇳+@WangCai2
+    headers:
+      Host: sni.111000.dynv6.net
+- name: youneed.win_106
+  type: vless
+  server: 104.26.7.205
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_107
+  type: vless
+  server: 162.159.36.20
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.jpmj.dev
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?Telegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2=
+    headers:
+      Host: sni.jpmj.dev
+- name: youneed.win_108
+  type: vless
+  server: 172.64.155.209
+  port: 2053
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_109
+  type: vless
+  server: 172.64.155.209
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_110
+  type: vless
+  server: 172.64.155.209
+  port: 8443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.dynv6.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?Telegram🇨🇳 @WangCai2
+    headers:
+      Host: sni.111000.dynv6.net
+- name: youneed.win_111
+  type: vless
+  server: 185.16.110.238
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.jpmj.dev
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳+@WangCai2
+    headers:
+      Host: sni.jpmj.dev
+- name: youneed.win_112
+  type: vless
+  server: 185.162.231.138
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_113
+  type: vless
+  server: 185.238.228.238
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.jpmj.dev
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: sni.jpmj.dev
+- name: youneed.win_114
+  type: vless
+  server: 185.251.81.238
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.jpmj.dev
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: sni.jpmj.dev
+- name: youneed.win_115
+  type: vless
+  server: 188.114.98.0
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_116
+  type: vless
+  server: 188.114.99.243
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳+@WangCai2
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_117
+  type: vless
+  server: 188.244.122.138
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_118
+  type: vless
+  server: 190.93.244.138
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_119
+  type: vless
+  server: 192.200.160.238
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.jpmj.dev
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: sni.jpmj.dev
+- name: youneed.win_120
+  type: vless
+  server: 212.183.88.238
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.jpmj.dev
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?Telegram%F0%9F%87%A8%F0%9F%87%B3+%40WangCai2=
+    headers:
+      Host: sni.jpmj.dev
+- name: youneed.win_121
+  type: vless
+  server: 104.20.24.24
+  port: 443
+  uuid: 6fb65356-788e-4118-8280-148ec6eca18a
+  tls: true
+  servername: xn--cz8h.pages.dev
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: pyip=proxyip.cmliussss.net
+    headers:
+      Host: xn--cz8h.pages.dev
+- name: youneed.win_122
+  type: vless
+  server: notability.com
+  port: 2053
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: vbxkgv81x.danfeng.qzz.io
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: vbxkgv81x.danfeng.qzz.io
+- name: youneed.win_123
+  type: vless
+  server: 202.155.11.73
+  port: 8443
+  uuid: 4b056394-2f40-11f1-bffe-46c4782ac1a7
+  tls: true
+  servername: www.apple.com
+  flow: xtls-rprx-vision
+  network: tcp
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  reality-opts:
+    public-key: ''
+    short-id: ''
+- name: youneed.win_124
+  type: vless
+  server: 82.117.245.125
+  port: 2053
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.v6.navy
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: sni.111000.v6.navy
+- name: youneed.win_125
   type: vless
   server: 172.64.33.217
   port: 443
@@ -779,28 +2173,13 @@ proxies:
     path: /tixvuws
     headers:
       Host: vangoghhh.info
-- name: youneed.win_27
+- name: youneed.win_126
   type: vless
-  server: 211.48.77.114
-  port: 12312
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  server: 188.132.184.148
+  port: 8443
+  uuid: d6cbf3e4-b7ca-a4b2-0b04-eacbdc28bc5a
   tls: true
-  servername: sni.111000.dynv6.net
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /?ed=2560&Telegram🇨🇳@WangCai2
-    headers:
-      Host: sni.111000.dynv6.net
-- name: youneed.win_28
-  type: vless
-  server: 51.38.81.196
-  port: 443
-  uuid: 70d73194b3424d7c826dcf2d3ad3adff
-  tls: true
-  servername: www.asus.com
+  servername: greenpepper.ir
   flow: xtls-rprx-vision
   network: tcp
   udp: true
@@ -809,9 +2188,26 @@ proxies:
   reality-opts:
     public-key: ''
     short-id: ''
-- name: youneed.win_29
+- name: youneed.win_127
   type: vless
-  server: 195.135.253.121
+  server: 188.114.98.0
+  port: 2087
+  uuid: 3f58cc47-94f6-40d3-8797-1ce66cb0555e
+  tls: true
+  servername: nl4.maxriser.ir
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  alpn:
+  - h2
+  ws-opts:
+    path: /
+    headers:
+      Host: nl4.maxriser.ir
+- name: youneed.win_128
+  type: vless
+  server: 194.164.192.16
   port: 443
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   tls: true
@@ -821,27 +2217,505 @@ proxies:
   packet-encoding: xudp
   skip-cert-verify: false
   ws-opts:
-    path: /?ed=2560&Telegram🇨🇳@@jdfxq
+    path: /?ed=2560
     headers:
       Host: sni.111000.indevs.in
-- name: youneed.win_30
+- name: youneed.win_129
   type: vless
-  server: 190.93.244.238
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  server: 173.245.58.75
+  port: 443
+  uuid: fc965ad9-bdd7-4815-ad71-b39ec5972dc1
   tls: true
-  servername: sni.jpmj.dev
+  servername: octopusss4.com
   network: ws
   udp: true
   packet-encoding: xudp
   skip-cert-verify: false
   ws-opts:
-    path: /?ed=2560&Telegram🇨🇳@WangCai2
+    path: /tsghdws
     headers:
-      Host: sni.jpmj.dev
-- name: youneed.win_31
+      Host: octopusss4.com
+- name: youneed.win_130
   type: vless
-  server: 14.102.228.238
+  server: 94.183.186.27
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.v6.navy
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&telegram🇨🇳@wangcai2
+    headers:
+      Host: sni.111000.v6.navy
+- name: youneed.win_131
+  type: vless
+  server: gbr1.frostbot.ru
+  port: 6443
+  uuid: 5b77fb18-cece-4759-9a81-571f1be53e0c
+  tls: true
+  servername: gbr1.frostbot.ru
+  flow: xtls-rprx-vision
+  network: tcp
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  reality-opts:
+    public-key: ''
+    short-id: ''
+- name: youneed.win_132
+  type: vless
+  server: lucy.ns.cloudflare.com
+  port: 443
+  uuid: 098fd515-29de-4d74-b77d-d8ab878a7e2c
+  tls: true
+  servername: rivvers.info
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /resgdws
+    headers:
+      Host: rivvers.info
+- name: youneed.win_133
+  type: vless
+  server: 135.84.64.226
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.dynv6.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?Telegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2=
+    headers:
+      Host: sni.111000.dynv6.net
+- name: youneed.win_134
+  type: vless
+  server: 141.193.213.10
+  port: 2053
+  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
+  tls: true
+  servername: qyi.fqjd663.ggff.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: qyi.fqjd663.ggff.net
+- name: youneed.win_135
+  type: vless
+  server: shop.app
+  port: 2053
+  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
+  tls: true
+  servername: qyi.fqjd663.ggff.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: qyi.fqjd663.ggff.net
+- name: youneed.win_136
+  type: vless
+  server: 45.43.76.184
+  port: 2053
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.v6.navy
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: sni.111000.v6.navy
+- name: youneed.win_137
+  type: vless
+  server: 89.58.43.93
+  port: 2006
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?Telegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2=
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_138
+  type: vless
+  server: 172.64.146.138
+  port: 443
+  uuid: fc965ad9-bdd7-4815-ad71-b39ec5972dc1
+  tls: true
+  servername: octopusss4.com
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /tsghdws
+    headers:
+      Host: octopusss4.com
+- name: youneed.win_139
+  type: vless
+  server: 81.19.141.91
+  port: 8443
+  uuid: f3a1017d-1ebf-11f1-8cae-c3845d39d2de
+  tls: true
+  servername: www.apple.com
+  flow: xtls-rprx-vision
+  network: tcp
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  reality-opts:
+    public-key: ''
+    short-id: ''
+- name: youneed.win_140
+  type: vless
+  server: 82.97.248.167
+  port: 443
+  uuid: a01881a8-3d9b-48bb-9a9c-e96e8b40b2c6
+  tls: true
+  servername: eh.vk.com
+  flow: xtls-rprx-vision
+  network: tcp
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  reality-opts:
+    public-key: ''
+    short-id: ''
+- name: youneed.win_141
+  type: vless
+  server: 108.162.192.75
+  port: 443
+  uuid: fc965ad9-bdd7-4815-ad71-b39ec5972dc1
+  tls: true
+  servername: octopusss4.com
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /tsghdws
+    headers:
+      Host: octopusss4.com
+- name: VLESS_3
+  type: vless
+  server: 34.82.76.253
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: 34.82.76.253
+  network: tcp
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+- name: youneed.win_142
+  type: vless
+  server: a3.buzz-vpn.com
+  port: 42428
+  uuid: 27d0c642-693c-4070-83b4-0e9803ba71b3
+  tls: true
+  servername: eh.vk.com
+  flow: xtls-rprx-vision
+  network: tcp
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  reality-opts:
+    public-key: ''
+    short-id: ''
+- name: youneed.win_143
+  type: vless
+  server: 104.17.106.12
+  port: 443
+  uuid: 6fb65356-788e-4118-8280-148ec6eca18a
+  tls: true
+  servername: xn--cz8h.pages.dev
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: pyip=proxyip.cmliussss.net
+    headers:
+      Host: xn--cz8h.pages.dev
+- name: youneed.win_144
+  type: vless
+  server: render.com
+  port: 2053
+  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
+  tls: true
+  servername: qyi.fqjd663.ggff.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: qyi.fqjd663.ggff.net
+- name: youneed.win_145
+  type: vless
+  server: www.bigcommerce.com
+  port: 2053
+  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
+  tls: true
+  servername: qyi.fqjd663.ggff.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: qyi.fqjd663.ggff.net
+- name: youneed.win_146
+  type: vless
+  server: 172.66.47.45
+  port: 443
+  uuid: 94daa8ad-75ed-4dbf-a6de-d05036d98df5
+  tls: true
+  servername: vangoghhh.info
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /tixvuws
+    headers:
+      Host: vangoghhh.info
+- name: youneed.win_147
+  type: vless
+  server: 63.141.128.22
+  port: 443
+  uuid: b8b01773-36b1-4b49-9bd0-6249f52345b4
+  tls: true
+  servername: MiSty-tooth-78cA.FoboGAH414-e7B.WoRKERs.DEv
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /eyJqdW5rIjoiTkNUaFg0ZnJNUjhhcyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
+    headers:
+      Host: misty-tooth-78ca.fobogah414-e7b.workers.dev
+- name: youneed.win_148
+  type: vless
+  server: 202.155.11.137
+  port: 8443
+  uuid: f3a1017d-1ebf-11f1-8cae-c3845d39d2de
+  tls: true
+  servername: www.apple.com
+  flow: xtls-rprx-vision
+  network: tcp
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  reality-opts:
+    public-key: ''
+    short-id: ''
+- name: youneed.win_149
+  type: vless
+  server: www.gov.se
+  port: 2053
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: vbxkgv81x.danfeng.qzz.io
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: vbxkgv81x.danfeng.qzz.io
+- name: youneed.win_150
+  type: vless
+  server: 104.26.1.221
+  port: 443
+  uuid: 3f9c8463-8610-3ed8-86c8-a26713067825
+  tls: true
+  servername: dabaius2.sylu.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /db10240eb751d6ab
+    headers:
+      Host: dabaius2.sylu.net
+- name: youneed.win_151
+  type: vless
+  server: 114.32.9.249
+  port: 16443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.danfeng.com.cfd
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.danfeng.com.cfd
+- name: youneed.win_152
+  type: vless
+  server: 167.99.73.22
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.danfeng.com.cfd
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.danfeng.com.cfd
+- name: youneed.win_153
+  type: vless
+  server: 60.248.139.106
+  port: 32770
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.danfeng.com.cfd
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.danfeng.com.cfd
+- name: youneed.win_154
+  type: vless
+  server: cf.cloudflare.182682.xyz
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: vbxkgv81x.danfeng.qzz.io
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: vbxkgv81x.danfeng.qzz.io
+- name: youneed.win_155
+  type: vless
+  server: 188.241.241.33
+  port: 2053
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?Telegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2=
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_156
+  type: vless
+  server: 162.159.36.20
+  port: 443
+  uuid: 94daa8ad-75ed-4dbf-a6de-d05036d98df5
+  tls: true
+  servername: vangoghhh.info
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /tixvuws
+    headers:
+      Host: vangoghhh.info
+- name: youneed.win_157
+  type: vless
+  server: 162.159.36.5
+  port: 443
+  uuid: fc965ad9-bdd7-4815-ad71-b39ec5972dc1
+  tls: true
+  servername: octopusss4.com
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /tsghdws
+    headers:
+      Host: octopusss4.com
+- name: youneed.win_158
+  type: vless
+  server: 135.84.64.222
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.dynv6.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: sni.111000.dynv6.net
+- name: youneed.win_159
+  type: vless
+  server: 162.159.153.231
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_160
+  type: vless
+  server: 108.162.192.133
+  port: 443
+  uuid: 098fd515-29de-4d74-b77d-d8ab878a7e2c
+  tls: true
+  servername: rivvers.info
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /resgdws
+    headers:
+      Host: rivvers.info
+- name: youneed.win_161
+  type: vless
+  server: 147.78.140.238
   port: 2096
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   tls: true
@@ -854,97 +2728,7 @@ proxies:
     path: /
     headers:
       Host: sni.jpmj.dev
-- name: youneed.win_32
-  type: vless
-  server: 45.131.208.191
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.my111000.tech
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /Telegram🇨🇳@WangCai2/
-    headers:
-      Host: sni.my111000.tech
-- name: youneed.win_33
-  type: vless
-  server: 135.84.67.96
-  port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.111000.dynv6.net
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /?ed=2560&Telegram🇨🇳@WangCai2
-    headers:
-      Host: sni.111000.dynv6.net
-- name: youneed.win_34
-  type: vless
-  server: 25.25.25.191
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.my111000.tech
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: Telegram🇨🇳@WangCai2/?ed=2560
-    headers:
-      Host: sni.my111000.tech
-- name: youneed.win_35
-  type: vless
-  server: 25.26.27.191
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.my111000.tech
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: Telegram🇨🇳@WangCai2/?ed=2560
-    headers:
-      Host: sni.my111000.tech
-- name: youneed.win_36
-  type: vless
-  server: 31.43.179.191
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.my111000.tech
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: Telegram🇨🇳@WangCai2/?ed=2560
-    headers:
-      Host: sni.my111000.tech
-- name: youneed.win_37
-  type: vless
-  server: 89.23.106.39
-  port: 2053
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.111000.indevs.in
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: sni.111000.indevs.in
-- name: youneed.win_38
+- name: youneed.win_162
   type: vless
   server: 172.64.147.137
   port: 443
@@ -959,24 +2743,759 @@ proxies:
     path: /tsghdws
     headers:
       Host: octopusss4.com
-- name: youneed.win_39
+- name: youneed.win_163
   type: vless
-  server: 172.67.153.156
-  port: 8443
-  uuid: 57ba2ab1-a283-42eb-82ee-dc3561a805b8
+  server: 172.64.32.133
+  port: 443
+  uuid: 098fd515-29de-4d74-b77d-d8ab878a7e2c
   tls: true
-  servername: ovhwuxian.pai50288.uk
+  servername: rivvers.info
   network: ws
   udp: true
   packet-encoding: xudp
   skip-cert-verify: false
   ws-opts:
-    path: /57ba2ab1
+    path: /resgdws
     headers:
-      Host: ovhwuxian.pai50288.uk
-- name: youneed.win_40
+      Host: rivvers.info
+- name: youneed.win_164
   type: vless
-  server: 51.195.119.195
+  server: 172.64.146.68
+  port: 443
+  uuid: fc965ad9-bdd7-4815-ad71-b39ec5972dc1
+  tls: true
+  servername: octopusss4.com
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /tsghdws
+    headers:
+      Host: octopusss4.com
+- name: youneed.win_165
+  type: vless
+  server: 8.223.63.150
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_166
+  type: vless
+  server: 172.67.134.216
+  port: 443
+  uuid: 5d950f22-a120-42c3-86f8-8ee81bfa08c9
+  tls: true
+  servername: VPN.NNET.Online
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /vless-tls
+    headers:
+      Host: nnet.online
+- name: youneed.win_167
+  type: vless
+  server: 192.0.54.238
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.jpmj.dev
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&telegram🇨🇳+@wangcai2
+    headers:
+      Host: sni.jpmj.dev
+- name: youneed.win_168
+  type: vless
+  server: 104.129.166.138
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_169
+  type: vless
+  server: 80.93.202.238
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.jpmj.dev
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳 @WangCai2
+    headers:
+      Host: sni.jpmj.dev
+- name: youneed.win_170
+  type: vless
+  server: 108.162.193.217
+  port: 443
+  uuid: 94daa8ad-75ed-4dbf-a6de-d05036d98df5
+  tls: true
+  servername: vangoghhh.info
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /tixvuws
+    headers:
+      Host: vangoghhh.info
+- name: youneed.win_171
+  type: vless
+  server: 176.124.223.138
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&telegram🇨🇳+@wangcai2
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_172
+  type: vless
+  server: 108.162.198.115
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.fgfw.loc.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.fgfw.loc.cc
+- name: youneed.win_173
+  type: vless
+  server: 114.32.9.249
+  port: 51443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.fgfw.loc.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.fgfw.loc.cc
+- name: youneed.win_174
+  type: vless
+  server: 153.121.45.101
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.fgfw.loc.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.fgfw.loc.cc
+- name: youneed.win_175
+  type: vless
+  server: 162.159.38.142
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.fgfw.loc.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.fgfw.loc.cc
+- name: youneed.win_176
+  type: vless
+  server: 162.159.38.147
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.fgfw.loc.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.fgfw.loc.cc
+- name: youneed.win_177
+  type: vless
+  server: 162.159.45.253
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.fgfw.loc.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.fgfw.loc.cc
+- name: youneed.win_178
+  type: vless
+  server: 162.159.45.28
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.fgfw.loc.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.fgfw.loc.cc
+- name: youneed.win_179
+  type: vless
+  server: 172.64.52.114
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.fgfw.loc.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.fgfw.loc.cc
+- name: youneed.win_180
+  type: vless
+  server: 172.64.52.157
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.fgfw.loc.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.fgfw.loc.cc
+- name: youneed.win_181
+  type: vless
+  server: 172.64.53.248
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.fgfw.loc.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.fgfw.loc.cc
+- name: youneed.win_182
+  type: vless
+  server: 203.69.248.40
+  port: 14147
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.fgfw.loc.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.fgfw.loc.cc
+- name: youneed.win_183
+  type: vless
+  server: 203.69.248.40
+  port: 16000
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.fgfw.loc.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.fgfw.loc.cc
+- name: youneed.win_184
+  type: vless
+  server: 34.143.159.175
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.fgfw.loc.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.fgfw.loc.cc
+- name: youneed.win_185
+  type: vless
+  server: 60.251.232.240
+  port: 995
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: snippet.fgfw.loc.cc
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: snippet.fgfw.loc.cc
+- name: youneed.win_186
+  type: vless
+  server: 104.17.53.9
+  port: 443
+  uuid: 6fb65356-788e-4118-8280-148ec6eca18a
+  tls: true
+  servername: xn--cz8h.pages.dev
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: pyip=proxyip.cmliussss.net
+    headers:
+      Host: xn--cz8h.pages.dev
+- name: youneed.win_187
+  type: vless
+  server: 173.245.59.217
+  port: 443
+  uuid: 94daa8ad-75ed-4dbf-a6de-d05036d98df5
+  tls: true
+  servername: vangoghhh.info
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /tixvuws
+    headers:
+      Host: vangoghhh.info
+- name: youneed.win_188
+  type: vless
+  server: 188.241.241.123
+  port: 2053
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.dynv6.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳@WangCai2
+    headers:
+      Host: sni.111000.dynv6.net
+- name: youneed.win_189
+  type: vless
+  server: 188.241.241.3
+  port: 2053
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.dynv6.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳@WangCai2
+    headers:
+      Host: sni.111000.dynv6.net
+- name: youneed.win_190
+  type: vless
+  server: static.shopify.com
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: kod4t259zf.fgfw.qzz.io
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: kod4t259zf.fgfw.qzz.io
+- name: youneed.win_191
+  type: vless
+  server: 185.16.110.0
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.dynv6.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳@WangCai2
+    headers:
+      Host: sni.111000.dynv6.net
+- name: youneed.win_192
+  type: vless
+  server: 104.21.6.124
+  port: 443
+  uuid: a91e1b4f-09f0-48af-a0c8-cd389bd3223c
+  tls: true
+  servername: VPn.nnet.Online
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /vless-tls
+    headers:
+      Host: nnet.online
+- name: youneed.win_193
+  type: vless
+  server: 195.135.254.64
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳@@jdfxq
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_194
+  type: vless
+  server: 46.32.184.75
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳@@jdfxq
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_195
+  type: vless
+  server: vpn3.rnmcnm.com
+  port: 443
+  uuid: c3d4e5f6-7890-1234-5678-90abcdef1234
+  tls: true
+  servername: vpn3.rnmcnm.com
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /ray
+    headers:
+      Host: vpn3.rnmcnm.com
+- name: youneed.win_196
+  type: vless
+  server: 89.116.250.138
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳 @WangCai2
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_197
+  type: vless
+  server: 198.41.209.193
+  port: 8443
+  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
+  tls: true
+  servername: wr.ssdxz.cn
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
+    headers:
+      Host: wr.ssdxz.cn
+- name: youneed.win_198
+  type: vless
+  server: 188.130.207.158
+  port: 8443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳@WangCai2
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_199
+  type: vless
+  server: 45.12.30.138
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳@WangCai2
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_200
+  type: vless
+  server: 5.34.209.231
+  port: 8443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.v6.navy
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&telegram🇨🇳+@wangcai2
+    headers:
+      Host: sni.111000.v6.navy
+- name: youneed.win_201
+  type: vless
+  server: 89.58.32.115
+  port: 12001
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.v6.navy
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&telegram🇨🇳+@wangcai2
+    headers:
+      Host: sni.111000.v6.navy
+- name: youneed.win_202
+  type: vless
+  server: 149.248.7.25
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_203
+  type: vless
+  server: 135.84.74.166
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.dynv6.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳@WangCai2
+    headers:
+      Host: sni.111000.dynv6.net
+- name: youneed.win_204
+  type: vless
+  server: 185.243.112.61
+  port: 2053
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.v6.navy
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&telegram🇨🇳+@wangcai2
+    headers:
+      Host: sni.111000.v6.navy
+- name: youneed.win_205
+  type: vless
+  server: 217.60.252.232
+  port: 2053
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.v6.navy
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sni.111000.v6.navy
+- name: youneed.win_206
+  type: vless
+  server: 45.85.119.191
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.my111000.tech
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: Telegram🇨🇳@WangCai2/?ed=2560
+    headers:
+      Host: sni.my111000.tech
+- name: VLESS_4
+  type: vless
+  server: 129.154.222.63
+  port: 8443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_207
+  type: vless
+  server: cfyx.dnspod.20237737.xyz
+  port: 443
+  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
+  tls: true
+  servername: wy.ssdxz.cn
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
+    headers:
+      Host: wy.ssdxz.cn
+- name: youneed.win_208
+  type: vless
+  server: 185.135.86.217
+  port: 8443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.v6.navy
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳@WangCai2
+    headers:
+      Host: sni.111000.v6.navy
+- name: youneed.win_209
+  type: vless
+  server: mfa.gov.ua
+  port: 443
+  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
+  tls: true
+  servername: wt.ssdxz.cn
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
+    headers:
+      Host: wt.ssdxz.cn
+- name: youneed.win_210
+  type: vless
+  server: serviceshub.samsclub.com
+  port: 443
+  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
+  tls: true
+  servername: we.ssdxz.cn
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
+    headers:
+      Host: we.ssdxz.cn
+- name: youneed.win_211
+  type: vless
+  server: www.shopify.com
+  port: 443
+  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
+  tls: true
+  servername: we.ssdxz.cn
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
+    headers:
+      Host: we.ssdxz.cn
+- name: VLESS_5
+  type: vless
+  server: 31.59.120.161
   port: 2053
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   tls: true
@@ -989,9 +3508,54 @@ proxies:
     path: /?ed=2560
     headers:
       Host: sni.111000.indevs.in
-- name: youneed.win_41
+- name: youneed.win_212
   type: vless
-  server: 195.54.175.160
+  server: 135.84.64.66
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.dynv6.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳@WangCai2
+    headers:
+      Host: sni.111000.dynv6.net
+- name: youneed.win_213
+  type: vless
+  server: 141.147.10.210
+  port: 8881
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.dynv6.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳@WangCai2
+    headers:
+      Host: sni.111000.dynv6.net
+- name: youneed.win_214
+  type: vless
+  server: 185.236.26.30
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.dynv6.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳@WangCai2
+    headers:
+      Host: sni.111000.dynv6.net
+- name: youneed.win_215
+  type: vless
+  server: 51.38.98.202
   port: 443
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   tls: true
@@ -1004,36 +3568,70 @@ proxies:
     path: /?ed=2560&Telegram🇨🇳@WangCai2
     headers:
       Host: sni.111000.indevs.in
-- name: VLESS_2
+- name: youneed.win_216
   type: vless
-  server: 185.148.104.238
-  port: 2096
+  server: 94.141.123.231
+  port: 443
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   tls: true
-  servername: 185.148.104.238
-  network: tcp
+  servername: sni.111000.dynv6.net
+  network: ws
   udp: true
   packet-encoding: xudp
   skip-cert-verify: false
-- name: youneed.win_42
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳@WangCai2
+    headers:
+      Host: sni.111000.dynv6.net
+- name: youneed.win_217
   type: vless
-  server: 185.82.126.217
+  server: 94.159.101.193
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.dynv6.net
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳 @WangCai2
+    headers:
+      Host: sni.111000.dynv6.net
+- name: youneed.win_218
+  type: vless
+  server: 172.64.32.75
+  port: 443
+  uuid: fc965ad9-bdd7-4815-ad71-b39ec5972dc1
+  tls: true
+  servername: octopusss4.com
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /tsghdws
+    headers:
+      Host: octopusss4.com
+- name: youneed.win_219
+  type: vless
+  server: 103.90.75.41
   port: 2053
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   tls: true
-  servername: sni.111000.dynv6.net
+  servername: sni.111000.indevs.in
   network: ws
   udp: true
   packet-encoding: xudp
   skip-cert-verify: false
   ws-opts:
-    path: /?ed=2560
+    path: /?ed=2560&Telegram🇨🇳@WangCai2
     headers:
-      Host: sni.111000.dynv6.net
-- name: youneed.win_43
+      Host: sni.111000.indevs.in
+- name: youneed.win_220
   type: vless
-  server: 91.84.103.10
-  port: 8443
+  server: 135.84.74.34
+  port: 443
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   tls: true
   servername: sni.111000.dynv6.net
@@ -1042,13 +3640,73 @@ proxies:
   packet-encoding: xudp
   skip-cert-verify: false
   ws-opts:
-    path: /?Telegram🇨🇳 @WangCai2=
+    path: /?ed=2560&Telegram🇨🇳@WangCai2
     headers:
       Host: sni.111000.dynv6.net
-- name: youneed.win_44
+- name: youneed.win_221
   type: vless
-  server: 185.162.230.138
+  server: 195.135.253.121
+  port: 443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳@@jdfxq
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_222
+  type: vless
+  server: 209.94.90.138
   port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.111000.indevs.in
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳@WangCai2
+    headers:
+      Host: sni.111000.indevs.in
+- name: youneed.win_223
+  type: vless
+  server: 45.131.209.191
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.my111000.tech
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: Telegram🇨🇳@WangCai2/?ed=2560
+    headers:
+      Host: sni.my111000.tech
+- name: youneed.win_224
+  type: vless
+  server: 190.93.244.238
+  port: 2096
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: true
+  servername: sni.jpmj.dev
+  network: ws
+  udp: true
+  packet-encoding: xudp
+  skip-cert-verify: false
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳@WangCai2
+    headers:
+      Host: sni.jpmj.dev
+- name: youneed.win_225
+  type: vless
+  server: 199.119.137.95
+  port: 2053
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   tls: true
   servername: sni.111000.indevs.in
@@ -1060,436 +3718,21 @@ proxies:
     path: /?ed=2560
     headers:
       Host: sni.111000.indevs.in
-- name: youneed.win_45
+- name: youneed.win_226
   type: vless
-  server: 49.13.64.206
+  server: cloudflare-dl.468123.xyz
   port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  uuid: 92017717-5a97-4008-9344-3f605c7c5f3d
   tls: true
-  servername: sni.111000.indevs.in
+  servername: cloudflare-dl.468123.xyz
   network: ws
   udp: true
   packet-encoding: xudp
   skip-cert-verify: false
   ws-opts:
-    path: /?ed=2560
+    path: /92017717-5a97-4008-9344-3f605c7c5f3d
     headers:
-      Host: sni.111000.indevs.in
-- name: youneed.win_46
-  type: vless
-  server: 185.156.19.238
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.jpmj.dev
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /
-    headers:
-      Host: sni.jpmj.dev
-- name: youneed.win_47
-  type: vless
-  server: 154.194.12.238
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.jpmj.dev
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /
-    headers:
-      Host: sni.jpmj.dev
-- name: youneed.win_48
-  type: vless
-  server: 5.175.141.238
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.jpmj.dev
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: sni.jpmj.dev
-- name: youneed.win_49
-  type: vless
-  server: 8.39.125.107
-  port: 443
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  tls: true
-  servername: _acme-challenge.443888.xyz
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: _acme-challenge.443888.xyz
-- name: youneed.win_50
-  type: vless
-  server: 25.129.196.191
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.my111000.tech
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: Telegram🇨🇳@WangCai2/?ed=2560
-    headers:
-      Host: sni.my111000.tech
-- name: youneed.win_51
-  type: vless
-  server: 25.129.197.191
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.my111000.tech
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: Telegram🇨🇳@WangCai2/?ed=2560
-    headers:
-      Host: sni.my111000.tech
-- name: youneed.win_52
-  type: vless
-  server: 45.40.144.191
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.my111000.tech
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: Telegram🇨🇳@WangCai2/?ed=2560
-    headers:
-      Host: sni.my111000.tech
-- name: youneed.win_53
-  type: vless
-  server: 45.40.148.191
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.my111000.tech
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: Telegram🇨🇳@WangCai2/?ed=2560
-    headers:
-      Host: sni.my111000.tech
-- name: VLESS_3
-  type: vless
-  server: 185.193.29.138
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: 185.193.29.138
-  network: tcp
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-- name: youneed.win_54
-  type: vless
-  server: 167.68.5.191
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.my111000.tech
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: Telegram🇨🇳+@WangCai2+/?ed=2560
-    headers:
-      Host: sni.my111000.tech
-- name: VLESS_4
-  type: vless
-  server: 198.204.227.171
-  port: 2053
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: 198.204.227.171
-  network: tcp
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-- name: youneed.win_55
-  type: vless
-  server: 141.11.203.238
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.jpmj.dev
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /XIXVPN?ed=2560
-    headers:
-      Host: sni.jpmj.dev
-- name: youneed.win_56
-  type: vless
-  server: 135.84.64.244
-  port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.111000.dynv6.net
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: sni.111000.dynv6.net
-- name: youneed.win_57
-  type: vless
-  server: 135.84.73.239
-  port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.111000.dynv6.net
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: sni.111000.dynv6.net
-- name: youneed.win_58
-  type: vless
-  server: 135.84.73.247
-  port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.111000.dynv6.net
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: sni.111000.dynv6.net
-- name: youneed.win_59
-  type: vless
-  server: 135.84.74.190
-  port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.111000.dynv6.net
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: sni.111000.dynv6.net
-- name: youneed.win_60
-  type: vless
-  server: 89.58.26.175
-  port: 2083
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  tls: true
-  servername: sni.111000.dynv6.net
-  network: ws
-  udp: true
-  packet-encoding: xudp
-  skip-cert-verify: false
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: sni.111000.dynv6.net
-- name: youneed.win_61
-  type: trojan
-  server: 216.238.102.254
-  port: 26593
-  password: BvzUvt45hON9We5X9wM6I9ZrxHRcYd46QK
-  skip-cert-verify: true
-  sni: sao2.cdn-graph.click
-  network: tcp
-- name: youneed.win_62
-  type: trojan
-  server: mfyousheng.nl.eu.org
-  port: 443
-  password: Puj01Rc8UcA9IzcFcYOs8KMOhCz6aX2Q
-  skip-cert-verify: true
-  sni: mfyousheng.nl.eu.org
-  network: ws
-- name: youneed.win_63
-  type: trojan
-  server: v3.dabache.top
-  port: 8443
-  password: T9BpZIVMNv
-  skip-cert-verify: true
-  sni: sweden.vmaxpanel.com
-  network: ws
-- name: youneed.win_64
-  type: trojan
-  server: 166.88.197.60
-  port: 26650
-  password: UNWA6USASAb6%2525253DuAAZeZMFd%2525252B2uKB4.d5KOm
-  skip-cert-verify: true
-  sni: sea9.firewallcontract.click
-  network: tcp
-- name: youneed.win_65
-  type: trojan
-  server: 104.21.40.34
-  port: 443
-  password: humanity
-  skip-cert-verify: true
-  sni: www.gossipglove.com
-  network: ws
-- name: youneed.win_66
-  type: trojan
-  server: 188.114.96.3
-  port: 443
-  password: humanity
-  skip-cert-verify: true
-  sni: www.gossipglove.com
-  network: ws
-- name: youneed.win_67
-  type: trojan
-  server: 104.18.32.47
-  port: 443
-  password: humanity
-  skip-cert-verify: true
-  sni: www.multiplydose.com
-  network: ws
-- name: youneed.win_68
-  type: trojan
-  server: 172.67.180.92
-  port: 443
-  password: humanity
-  skip-cert-verify: true
-  sni: www.multiplydose.com
-  network: ws
-- name: youneed.win_69
-  type: trojan
-  server: 82.26.155.3
-  port: 10369
-  password: n5ix4FcMQYENMQPL%2525252BYKbvyJ8nZ84%2525252BbNTsj
-  skip-cert-verify: true
-  sni: fra34.chasem2026sud.com
-  network: tcp
-- name: youneed.win_70
-  type: trojan
-  server: 80.173.231.254
-  port: 12420
-  password: wp9IsiY82uQhcmgNC1eoBM
-  skip-cert-verify: true
-  sni: www.semanticstaplegun.click
-  network: tcp
-- name: youneed.win_71
-  type: trojan
-  server: 172.64.152.23
-  port: 443
-  password: humanity
-  skip-cert-verify: true
-  sni: www.multiplydose.com
-  network: ws
-- name: youneed.win_72
-  type: trojan
-  server: www.calmlunch.com
-  port: 443
-  password: humanity
-  skip-cert-verify: true
-  sni: www.calmlunch.com
-  network: ws
-- name: youneed.win_73
-  type: trojan
-  server: ct.090227.xyz
-  port: 443
-  password: 22367c45-f6c4-4ca8-8d52-d9787d7bbe91
-  skip-cert-verify: true
-  sni: cm22-bgphhh.pages.dev
-  network: ws
-- name: youneed.win_74
-  type: trojan
-  server: 185.18.250.245
-  port: 443
-  password: humanity
-  skip-cert-verify: true
-  sni: www.calmlunch.com
-  network: ws
-- name: youneed.win_75
-  type: trojan
-  server: 38.60.89.136
-  port: 50000
-  password: trojan
-  skip-cert-verify: true
-  sni: jflsjlaf.pages.dev
-  network: ws
-- name: youneed.win_76
-  type: trojan
-  server: 185.18.250.252
-  port: 443
-  password: humanity
-  skip-cert-verify: true
-  sni: www.gossipglove.com
-  network: ws
-- name: youneed.win_77
-  type: trojan
-  server: ct.877774.xyz
-  port: 443
-  password: 22367c45-f6c4-4ca8-8d52-d9787d7bbe91
-  skip-cert-verify: true
-  sni: cm22-bgphhh.pages.dev
-  network: ws
-- name: youneed.win_78
-  type: trojan
-  server: 208.103.161.110
-  port: 443
-  password: humanity
-  skip-cert-verify: true
-  sni: www.creationlong.org
-  network: ws
-- name: youneed.win_79
-  type: trojan
-  server: v3.dabache.top
-  port: 443
-  password: humanity
-  skip-cert-verify: true
-  sni: www.calmlunch.com
-  network: ws
-- name: youneed.win_80
-  type: trojan
-  server: irancell.buzzmuzzpanel.online
-  port: 443
-  password: freedom
-  skip-cert-verify: true
-  sni: 047.eleCTROCelLco-Cf-047.woRkers.DEV
-  network: ws
-- name: youneed.win_81
-  type: trojan
-  server: 104.18.8.83
-  port: 443
-  password: humanity
-  skip-cert-verify: true
-  sni: www.calmlunch.com
-  network: ws
+      Host: dasabo.foda.dpdns.org
 proxy-groups:
 - name: 节点选择
   type: select
@@ -1502,37 +3745,33 @@ proxy-groups:
   interval: 360
   tolerance: 60
   proxies: &id001
-  - 亚太地区_V2CROSS.COM
-  - 英国_V2CROSS.COM
   - 英国+伦敦Virgin+Media
-  - 伊朗_V2CROSS.COM
+  - 英国_V2CROSS.COM
   - 191babc5-VLESS_WS
   - e88b85c6-VLESS_WS
+  - 🇷🇺_RU_俄罗斯
   - 🇺🇸_US_美国
-  - 🇷🇺_RU_俄罗斯->🇸🇮_SI_斯洛文尼亚
   - 🇺🇸_US_美国_2
-  - 🇺🇸_US_美国_3
-  - 🇺🇸_US_美国_4
-  - 🇺🇸_US_美国_5
-  - 🇺🇸_US_美国_6
-  - 🇺🇸US-64.186.254.102-0225
-  - 🏁RELAY-104.18.43.174-0407
+  - 🇺🇸US-104.238.162.6-0240
+  - 🇳🇴NO-80.173.231.254-0277
+  - 🇬🇧GB-82.26.155.199-0285
+  - 🇬🇧GB-82.26.155.20-0287
+  - 🇬🇧GB-82.26.155.3-0289
   - 🇯🇵_VMESS-美国>日本-NF解锁日本地区非自制剧-ChatGPT-YouTube-t1.620720.xyz:84
   - 🇺🇸_VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-cg1c07.waimaojd.c
-  - 🇺🇸_VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-cg1c01.waimaojd.c
-  - 🇺🇸_VMESS-美国-ChatGPT-TikTok-YouTube-cg1c04.waimaojd.com:443
+  - 🇦🇺_VMESS-未知>澳大利亚-NF解锁澳大利亚自制剧-ChatGPT-TikTok-YouTube-sy4.6207
   - 🇺🇸_VMESS-美国-ChatGPT-TikTok-YouTube-cg1c14.waimaojd.com:443
+  - 🇬🇧_英国_伦敦Virgin_Media
   - 🇬🇧_英国_V2CROSS.COM
-  - 🇺🇸_美国_Choopa公司数据中心
-  - 🇮🇷_伊朗_V2CROSS.COM
-  - 🇭🇰_香港@ripaojiedian
+  - 🇪🇸_西班牙_V2CROSS.COM
+  - 🇧🇬_保加利亚_V2CROSS.COM
+  - 🇬🇧_英国_V2CROSS.COM_2
   - 🇺🇸_US美国(mibei77.com_米贝节点分享)
   - 🇺🇸_US美国(mibei77.com_米贝节点分享)_2
-  - 🇪🇸_西班牙(mibei77.com_米贝节点分享)
-  - 🇷🇺_RU俄罗斯(mibei77.com_米贝节点分享)
   - 🇺🇸_US美国(mibei77.com_米贝节点分享)_3
   - 🇺🇸_US美国(mibei77.com_米贝节点分享)_4
   - 🇺🇸_US美国(mibei77.com_米贝节点分享)_5
+  - 🇷🇺_RU俄罗斯(mibei77.com_米贝节点分享)
   - youneed.win
   - youneed.win_2
   - youneed.win_3
@@ -1556,7 +3795,6 @@ proxy-groups:
   - youneed.win_21
   - youneed.win_22
   - youneed.win_23
-  - VLESS
   - youneed.win_24
   - youneed.win_25
   - youneed.win_26
@@ -1567,6 +3805,8 @@ proxy-groups:
   - youneed.win_31
   - youneed.win_32
   - youneed.win_33
+  - VLESS
+  - VLESS_2
   - youneed.win_34
   - youneed.win_35
   - youneed.win_36
@@ -1575,7 +3815,6 @@ proxy-groups:
   - youneed.win_39
   - youneed.win_40
   - youneed.win_41
-  - VLESS_2
   - youneed.win_42
   - youneed.win_43
   - youneed.win_44
@@ -1588,9 +3827,7 @@ proxy-groups:
   - youneed.win_51
   - youneed.win_52
   - youneed.win_53
-  - VLESS_3
   - youneed.win_54
-  - VLESS_4
   - youneed.win_55
   - youneed.win_56
   - youneed.win_57
@@ -1618,6 +3855,154 @@ proxy-groups:
   - youneed.win_79
   - youneed.win_80
   - youneed.win_81
+  - youneed.win_82
+  - youneed.win_83
+  - youneed.win_84
+  - youneed.win_85
+  - youneed.win_86
+  - youneed.win_87
+  - youneed.win_88
+  - youneed.win_89
+  - youneed.win_90
+  - youneed.win_91
+  - youneed.win_92
+  - youneed.win_93
+  - youneed.win_94
+  - youneed.win_95
+  - youneed.win_96
+  - youneed.win_97
+  - youneed.win_98
+  - youneed.win_99
+  - youneed.win_100
+  - youneed.win_101
+  - youneed.win_102
+  - youneed.win_103
+  - youneed.win_104
+  - youneed.win_105
+  - youneed.win_106
+  - youneed.win_107
+  - youneed.win_108
+  - youneed.win_109
+  - youneed.win_110
+  - youneed.win_111
+  - youneed.win_112
+  - youneed.win_113
+  - youneed.win_114
+  - youneed.win_115
+  - youneed.win_116
+  - youneed.win_117
+  - youneed.win_118
+  - youneed.win_119
+  - youneed.win_120
+  - youneed.win_121
+  - youneed.win_122
+  - youneed.win_123
+  - youneed.win_124
+  - youneed.win_125
+  - youneed.win_126
+  - youneed.win_127
+  - youneed.win_128
+  - youneed.win_129
+  - youneed.win_130
+  - youneed.win_131
+  - youneed.win_132
+  - youneed.win_133
+  - youneed.win_134
+  - youneed.win_135
+  - youneed.win_136
+  - youneed.win_137
+  - youneed.win_138
+  - youneed.win_139
+  - youneed.win_140
+  - youneed.win_141
+  - VLESS_3
+  - youneed.win_142
+  - youneed.win_143
+  - youneed.win_144
+  - youneed.win_145
+  - youneed.win_146
+  - youneed.win_147
+  - youneed.win_148
+  - youneed.win_149
+  - youneed.win_150
+  - youneed.win_151
+  - youneed.win_152
+  - youneed.win_153
+  - youneed.win_154
+  - youneed.win_155
+  - youneed.win_156
+  - youneed.win_157
+  - youneed.win_158
+  - youneed.win_159
+  - youneed.win_160
+  - youneed.win_161
+  - youneed.win_162
+  - youneed.win_163
+  - youneed.win_164
+  - youneed.win_165
+  - youneed.win_166
+  - youneed.win_167
+  - youneed.win_168
+  - youneed.win_169
+  - youneed.win_170
+  - youneed.win_171
+  - youneed.win_172
+  - youneed.win_173
+  - youneed.win_174
+  - youneed.win_175
+  - youneed.win_176
+  - youneed.win_177
+  - youneed.win_178
+  - youneed.win_179
+  - youneed.win_180
+  - youneed.win_181
+  - youneed.win_182
+  - youneed.win_183
+  - youneed.win_184
+  - youneed.win_185
+  - youneed.win_186
+  - youneed.win_187
+  - youneed.win_188
+  - youneed.win_189
+  - youneed.win_190
+  - youneed.win_191
+  - youneed.win_192
+  - youneed.win_193
+  - youneed.win_194
+  - youneed.win_195
+  - youneed.win_196
+  - youneed.win_197
+  - youneed.win_198
+  - youneed.win_199
+  - youneed.win_200
+  - youneed.win_201
+  - youneed.win_202
+  - youneed.win_203
+  - youneed.win_204
+  - youneed.win_205
+  - youneed.win_206
+  - VLESS_4
+  - youneed.win_207
+  - youneed.win_208
+  - youneed.win_209
+  - youneed.win_210
+  - youneed.win_211
+  - VLESS_5
+  - youneed.win_212
+  - youneed.win_213
+  - youneed.win_214
+  - youneed.win_215
+  - youneed.win_216
+  - youneed.win_217
+  - youneed.win_218
+  - youneed.win_219
+  - youneed.win_220
+  - youneed.win_221
+  - youneed.win_222
+  - youneed.win_223
+  - youneed.win_224
+  - youneed.win_225
+  - youneed.win_226
 - name: 手动选择
   type: select
   proxies: *id001
