@@ -6,7 +6,7 @@ import re
 import time
 import os
 
-from v2c import parse_raw_links
+from v2meta import parse_raw_links
 
 # --- 配置区 ---
 BASE_URL = "https://freefq.com"

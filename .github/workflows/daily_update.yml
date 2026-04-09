@@ -31,7 +31,7 @@ jobs:
 
       - name: Run spider to fetch nodes and generate config
         run: |
-          python spider.py
+          python main.py
 
       - name: Check for changes
         id: git-check
