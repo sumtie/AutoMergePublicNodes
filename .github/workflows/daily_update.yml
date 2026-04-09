@@ -1,4 +1,4 @@
-name: daily_update
+name: Daily Update
 
 on:
   schedule:
@@ -30,23 +30,19 @@ jobs:
           pip install requests beautifulsoup4 PyYAML lxml
 
       - name: Run spider to fetch nodes and generate config
-        run: |
-          python main.py
+        run: python web_freefq.py
 
       - name: Check for changes
         id: git-check
         run: |
           git diff --quiet HEAD -- sub/meta.yaml || echo "changed=true" >> $GITHUB_OUTPUT
 
-      - name: Configure Git and set Shanghai timezone
+      - name: Commit and push updates (Shanghai time)
         if: steps.git-check.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-      - name: Commit and push updates (Shanghai time)
-        if: steps.git-check.outputs.changed == 'true'
-        run: |
+          
           SH_TIME=$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')
           git add sub/meta.yaml
           git commit -m "Daily update: ${SH_TIME}"
