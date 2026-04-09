@@ -1,20 +1,21 @@
-name: Daily Spider
+name: daily_update
 
 on:
   schedule:
-    - cron: '0 2 * * *'        # Runs daily at 10:00 AM Beijing Time (UTC+8)
-  workflow_dispatch:           # Allows manual trigger for testing
+    - cron: '0 2 * * *'
+  workflow_dispatch:
 
 jobs:
   spider-and-generate:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Delete workflows runs for current repo
+      - name: Delete old workflow runs
         uses: Mattraks/delete-workflow-runs@v2
         with:
           retain_days: 0
           keep_minimum_runs: 5
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -35,19 +36,20 @@ jobs:
       - name: Check for changes
         id: git-check
         run: |
-          git diff --quiet HEAD -- meta.yaml v2.txt || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --quiet HEAD -- sub/meta.yaml || echo "changed=true" >> $GITHUB_OUTPUT
 
-      - name: Configure Git
+      - name: Configure Git and set Shanghai timezone
         if: steps.git-check.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Commit and push updates
+      - name: Commit and push updates (Shanghai time)
         if: steps.git-check.outputs.changed == 'true'
         run: |
-          git add meta.yaml v2.txt
-          git commit -m "Daily update: $(date '+%Y-%m-%d %H:%M:%S')"
+          SH_TIME=$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')
+          git add sub/meta.yaml
+          git commit -m "Daily update: ${SH_TIME}"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -56,7 +58,7 @@ jobs:
         run: |
           echo "=== Job Completed ==="
           if [ "${{ steps.git-check.outputs.changed }}" = "true" ]; then
-            echo "✅ New nodes detected. Changes committed and pushed."
+            echo "✅ New nodes detected. Changes committed and pushed to sub/meta.yaml"
           else
             echo "ℹ️ No changes today. No commit needed."
           fi
