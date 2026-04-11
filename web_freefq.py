@@ -1,12 +1,9 @@
 import requests
-import yaml
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import re
 import time
 import os
-
-from v2meta import parse_raw_links
 
 # --- 配置区 ---
 BASE_URL = "https://freefq.com"
@@ -91,16 +88,22 @@ def extract_nodes_from_source(final_url):
 
 def main():
     """控制中心：按步骤执行"""
-    # 1. 找文章
+    print("=" * 50)
+    print("开始从 freefq.com 获取免费 Xray 节点")
+    print("=" * 50)
+
+    # 1. 找文章链接
     article_link = get_article_url()
     if not article_link:
+        print("[!] 任务终止：未找到文章链接")
         return
 
     time.sleep(1)
 
-    # 2. 找真实数据页
+    # 2. 找真实节点页面
     real_data_page = get_real_node_page(article_link)
     if not real_data_page:
+        print("[!] 任务终止：未找到节点页面")
         return
 
     time.sleep(2)
@@ -108,22 +111,22 @@ def main():
     # 3. 提取节点
     final_nodes = extract_nodes_from_source(real_data_page)
 
-    # 4. 生成配置并保存到 sub/meta.yaml
+    # 4. 保存到 v2.txt（当前目录）
     if final_nodes:
-        print("\n" + "=" * 20 + " 抓取结果汇总 " + "=" * 20)
+        print("\n" + "=" * 20 + " 保存节点到 v2.txt " + "=" * 20)
 
-        # 确保 sub 目录存在
-        os.makedirs("sub", exist_ok=True)
+        with open("v2.txt", "w", encoding="utf-8") as f:
+            for node in final_nodes:
+                f.write(node + "\n")
 
-        config = parse_raw_links(final_nodes)
-
-        output_path = "sub/meta.yaml"
-        with open(output_path, "w", encoding="utf-8") as f:
-            yaml.dump(config, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
-
-        print(f"✅ {output_path} 生成成功！")
+        print(f"✅ 成功保存 {len(final_nodes)} 个节点到 v2.txt")
+        print(f"   文件路径：{os.path.abspath('v2.txt')}")
     else:
-        print("\n[!] 任务结束，未获取到任何数据。")
+        print("\n[!] 未获取到任何节点，v2.txt 未生成")
+
+    print("\n" + "=" * 50)
+    print("任务完成")
+    print("=" * 50)
 
 
 if __name__ == "__main__":

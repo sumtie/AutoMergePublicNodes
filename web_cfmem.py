@@ -1,3 +1,4 @@
+import base64
 import time
 import requests
 from bs4 import BeautifulSoup
@@ -17,13 +18,17 @@ CLASH_HEADERS = {
     'User-Agent': 'clash-verge/v2.4.0'
 }
 
+V2RAY_HEADERS = {
+    'User-Agent': 'v2ray'
+}
+
 # 重试配置
 MAX_RETRIES = 3
 RETRY_BACKOFF = 2  # 指数退避基数（秒）
 
 
 def fetch_page(url: str, headers: Dict = None, timeout: int = 15) -> Optional[str]:
-    """带重试机制的页面获取函数（单一职责：只负责请求）"""
+    """带重试机制的页面获取函数"""
     if headers is None:
         headers = HEADERS
 
@@ -81,7 +86,6 @@ def extract_subscription_links(article_url: str) -> Dict[str, Optional[str]]:
         "singbox": None
     }
 
-    # 更宽松的正则，适配 fs.v2rayse.com / oss.v2rayse.com 等
     for line in text.splitlines():
         line = line.strip()
         if not line:
@@ -108,20 +112,31 @@ def extract_subscription_links(article_url: str) -> Dict[str, Optional[str]]:
     return links
 
 
-def download_clash_subscription(url: str) -> Optional[str]:
-    """单独下载 订阅内容（可选使用）"""
+def download_subscription(url: str, headers: Dict = None) -> Optional[str]:
+    """通用下载订阅内容函数"""
     if not url:
         return None
 
-    print(f"[{datetime.now()}] 正在下载 Clash 订阅: {url}")
-    content = fetch_page(url, headers=CLASH_HEADERS, timeout=30)
+    print(f"[{datetime.now()}] 正在下载: {url}")
+    content = fetch_page(url, headers=headers, timeout=30)
     if content:
-        print(f"[{datetime.now()}] Clash 订阅下载成功，长度: {len(content)} 字符")
+        print(f"[{datetime.now()}] 下载成功，长度: {len(content)} 字符")
     return content
 
 
+def decode_base64(encoded_string):
+    """对Base64编码的字符串进行解码"""
+    # 将字符串转换为字节
+    encoded_bytes = encoded_string.encode('utf-8')
+    # 解码Base64字节
+    decoded_bytes = base64.b64decode(encoded_bytes)
+    # 将解码后的字节转换为字符串
+    decoded_string = decoded_bytes.decode('utf-8')
+    return decoded_string
+
+
 def main():
-    print(f"[{datetime.now()}] 开始获取最新节点订阅...")
+    print(f"[{datetime.now()}] 开始获取 cfmem.com 最新节点订阅...")
 
     # 1. 找到最新文章
     article_url = find_latest_article_url()
@@ -129,7 +144,7 @@ def main():
         print("获取文章链接失败，程序退出")
         return
 
-    time.sleep(1.5)  # 礼貌间隔
+    time.sleep(1.5)
 
     # 2. 提取订阅链接
     links = extract_subscription_links(article_url)
@@ -139,15 +154,32 @@ def main():
         status = "✅ 获取成功" if url else "❌ 未找到"
         print(f"{key.upper():<8}: {url if url else 'None'}  ({status})")
 
-    # 示例：如果需要下载 Clash 订阅内容，可取消注释
-    if links.get("clash"):
-        yaml_content = download_clash_subscription(links["clash"])
-        if yaml_content:
-            with open("clash.yaml", "w", encoding="utf-8") as f:
-                f.write(yaml_content)
-            print("Clash 订阅已保存为 clash.yaml")
+    # ==================== 保存 V2Ray 订阅 ====================
+    if links.get("v2ray"):
+        v2_content = download_subscription(links["v2ray"], headers=V2RAY_HEADERS)
+        if v2_content:
+            v2_content = decode_base64(v2_content)
+            with open("v2.txt", "w", encoding="utf-8") as f:
+                f.write(v2_content)
+            print(f"✅ v2.txt 已保存到当前目录")
+        else:
+            print("❌ 下载 V2Ray 订阅内容失败")
+    else:
+        print("❌ 未找到 V2Ray 订阅链接")
 
-    print(f"[{datetime.now()}] 本次任务完成\n")
+    # ==================== 保存 Clash 订阅 ====================
+    if links.get("clash"):
+        yaml_content = download_subscription(links["clash"], headers=CLASH_HEADERS)
+        if yaml_content:
+            with open("meta.yaml", "w", encoding="utf-8") as f:
+                f.write(yaml_content)
+            print(f"✅ meta.yaml 已保存到当前目录")
+        else:
+            print("❌ 下载 Clash 订阅内容失败")
+    else:
+        print("❌ 未找到 Clash 订阅链接")
+
+    print(f"\n[{datetime.now()}] 本次任务完成\n")
 
 
 if __name__ == "__main__":

@@ -27,34 +27,39 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 PyYAML lxml
+          pip install requests beautifulsoup4 lxml
 
-      - name: Run spider to fetch nodes and generate config
+      - name: Run freefq spider
         run: python web_freefq.py
 
-      - name: Check for changes
+      # ==================== 检查 v2.txt 是否有变化 ====================
+      - name: Check for changes in v2.txt
         id: git-check
         run: |
-          git diff --quiet HEAD -- sub/meta.yaml || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --quiet HEAD -- v2.txt || echo "changed=true" >> $GITHUB_OUTPUT
 
+      # ==================== 如果有变化则提交 ====================
       - name: Commit and push updates (Shanghai time)
         if: steps.git-check.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
+
           SH_TIME=$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')
-          git add sub/meta.yaml
-          git commit -m "Daily update: ${SH_TIME}"
+
+          git add v2.txt
+          git commit -m "Daily update: ${SH_TIME} (v2.txt)"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # ==================== Job 总结 ====================
       - name: Job summary
         run: |
-          echo "=== Job Completed ==="
+          echo "=== Daily Update Job Completed ==="
           if [ "${{ steps.git-check.outputs.changed }}" = "true" ]; then
-            echo "✅ New nodes detected. Changes committed and pushed to sub/meta.yaml"
+            echo "✅ 新节点已更新！已提交 v2.txt"
+            echo "更新时间（上海时间）：$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')"
           else
-            echo "ℹ️ No changes today. No commit needed."
+            echo "ℹ️ 今天节点无变化，无需提交"
           fi
